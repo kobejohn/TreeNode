@@ -52,6 +52,35 @@ class TN_access_to_children(ut.TestCase):
         self.parent.graft_child(self.child2)
 
 
+class In_Order_Access_to_Nodes(ut.TestCase):
+    def test__in_order_nodes__provides_sequence_with_only_self_when_only_one_self_in_tree(self):
+        node_string_list_spec = ["root"]
+        node_string_list = [node.name for node in self.root.in_order_nodes]
+        self.assertEqual(node_string_list_spec, node_string_list)
+
+    def test__in_order_nodes__provides_in_order_sequence_for_full_tree(self):
+        self.root.graft_child(self.a)
+        self.root.graft_child(self.b)
+        self.b.graft_child(self.c)
+        node_string_list_spec = ["root","a","b","c"]
+        node_string_list = [node.name for node in self.root.in_order_nodes]
+        self.assertEqual(node_string_list_spec, node_string_list)
+
+    def test__in_order_nodes__provides_in_order_sequence_limited_to_subtree(self):
+        self.root.graft_child(self.a)
+        self.root.graft_child(self.b)
+        self.b.graft_child(self.c)
+        node_string_list_spec = ["b","c"]
+        node_string_list = [node.name for node in self.b.in_order_nodes]
+        self.assertEqual(node_string_list_spec, node_string_list)
+
+    def setUp(self):
+        self.root = st.TreeNode(name = "root")
+        self.a = st.TreeNode(name = "a")
+        self.b = st.TreeNode(name = "b")
+        self.c = st.TreeNode(name = "c")
+
+
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
 # Internal Key Examples
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #

@@ -1,3 +1,5 @@
+from collections import deque
+
 class TreeNode(object):
     def __init__(self, **kwargs):
         """Assign appropriate attributes to the node. e.g. state, action."""
@@ -37,6 +39,22 @@ class TreeNode(object):
         return "\n".join(final_line_list)
     def __repr__(self):
         return self.__str__()
+
+
+    @property
+    def in_order_nodes(self):
+        """In-order generate all nodes in tree with self as root."""
+        stack = deque()
+        stack.append(self)
+        while stack:
+            #get the current (in-order) node
+            node = stack.pop()
+            #add all its children to be processed (only one will be done next)
+            #reverse order makes it more natural for humans just
+            for child in reversed(list(node.children)):
+                stack.append(child)
+            yield node
+
 
     @property
     def parent(self):
