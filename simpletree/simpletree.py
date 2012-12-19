@@ -23,9 +23,9 @@ class TreeNode(object):
             assert self_set == other_set
         except AssertionError:
             return False
-        #next compare value of each attribute
+            #next compare value of each attribute
         return all(getattr(self,attr)==getattr(other,attr)
-                                    for attr in self._custom_attributes)
+            for attr in self._custom_attributes)
     def __iter__(self):
         """Make the instance generate its data items."""
         for attr_name in self._custom_attributes:
@@ -40,6 +40,15 @@ class TreeNode(object):
     def __repr__(self):
         return self.__str__()
 
+    @property
+    def parent(self):
+        """Provide read only access to parent."""
+        return self._parent
+
+    @property
+    def children(self):
+        """Generate children. Don't provide direct list access."""
+        for child in self._children.values(): yield child
 
     @property
     def in_order_nodes(self):
@@ -55,16 +64,12 @@ class TreeNode(object):
                 stack.append(child)
             yield node
 
-
     @property
-    def parent(self):
-        """Provide read only access to parent."""
-        return self._parent
-
-    @property
-    def children(self):
-        """Generate children. Don't provide direct list access."""
-        for child in self._children.values(): yield child
+    def leaves(self):
+        """Generate all leaves in the tree with self as root."""
+        for node in self.in_order_nodes:
+            if not list(node.children): #i.e. no children ==> leaf
+                yield node
 
     def trim(self):
         """Remove double link between self and parent."""
