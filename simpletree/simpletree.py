@@ -65,6 +65,12 @@ class TreeNode(object):
             yield node
 
     @property
+    def post_order_nodes(self):
+        """Post-order generate the reverse of in-order nodes."""
+        for node in reversed(list(self.in_order_nodes)):
+            yield node #fake generator really since the list is all there. but for consistency
+
+    @property
     def leaves(self):
         """Generate all leaves in the tree with self as root."""
         for node in self.in_order_nodes:

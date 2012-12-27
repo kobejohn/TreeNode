@@ -113,6 +113,22 @@ class In_Order_Access_to_Nodes(ut.TestCase):
         self.c = st.TreeNode(name = "c")
 
 
+class Post_Order_Access_To_Nodes(ut.TestCase):
+    def setUp(self):
+        self.root = st.TreeNode(name = "root")
+        self.a = st.TreeNode(name = "a")
+        self.b = st.TreeNode(name = "b")
+        self.c = st.TreeNode(name = "c")
+
+    def test_Post_Order_Simply_Provides_Reversed_In_Order_Nodes(self):
+        self.root.graft_child(self.a)
+        self.root.graft_child(self.b)
+        self.b.graft_child(self.c)
+        post_order_node_names = [node.name for node in self.root.post_order_nodes]
+        reversed_in_order_node_names = [node.name for node in reversed(list(self.root.in_order_nodes))]
+        self.assertEqual(post_order_node_names, reversed_in_order_node_names)
+
+
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
 # Internal Key Examples
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
