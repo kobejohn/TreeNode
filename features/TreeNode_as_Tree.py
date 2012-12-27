@@ -52,6 +52,38 @@ class Access_To_Children(ut.TestCase):
         self.parent.graft_child(self.child2)
 
 
+class Access_to_Leaves(ut.TestCase):
+    def test_single_node_has_itself_as_only_leaf(self):
+        root = st.TreeNode()
+        leaves = list(root.leaves)
+        self.assertEqual(len(leaves), 1)
+
+    def test_simple_binary_tree_with_three_levels_has_4_leaves(self):
+        levels = 3
+        children_per_node = 2
+        #first level
+        a0 = st.TreeNode(name='a0')
+        #second level
+        b0 = st.TreeNode(name='b0')
+        b1 = st.TreeNode(name='b1')
+        #third level
+        c0 = st.TreeNode(name='c0')
+        c1 = st.TreeNode(name='c1')
+        c2 = st.TreeNode(name='c2')
+        c3 = st.TreeNode(name='c3')
+        #attach everything
+        a0.graft_child(b0)
+        a0.graft_child(b1)
+        b0.graft_child(c0)
+        b0.graft_child(c1)
+        b1.graft_child(c2)
+        b1.graft_child(c3)
+        #confirm leaves
+        leaf_names = [leaf.name for leaf in a0.leaves]
+        leaf_names_spec = ['c0','c1','c2','c3']
+        self.assertSequenceEqual(leaf_names, leaf_names_spec)
+
+
 class In_Order_Access_to_Nodes(ut.TestCase):
     def test__in_order_nodes__provides_sequence_with_only_self_when_only_one_self_in_tree(self):
         node_string_list_spec = ["root"]
