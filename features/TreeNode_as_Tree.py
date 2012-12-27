@@ -9,7 +9,7 @@ from simpletree import simpletree as st
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
 # Responsibilities Key Examples
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
-class TN_access_to_parent(ut.TestCase):
+class Access_To_Parent(ut.TestCase):
     def test_TN__parent_is_none_by_default(self):
         node = st.TreeNode()
         self.assertIsNone(node.parent)
@@ -26,7 +26,7 @@ class TN_access_to_parent(ut.TestCase):
         self.assertRaises(AttributeError, delattr, node, "parent")
 
 
-class TN_access_to_children(ut.TestCase):
+class Access_To_Children(ut.TestCase):
     def test_TN__graft_child_handles_linking_of_new_child_node(self):
         self.assertEqual(id(self.child1.parent), id(self.parent))
         child_ids_spec = [id(self.child1), id(self.child2)]
