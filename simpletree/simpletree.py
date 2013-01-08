@@ -26,10 +26,10 @@ class TreeNode(object):
             #next compare value of each attribute
         return all(getattr(self,attr)==getattr(other,attr)
             for attr in self._custom_attributes)
-    def __iter__(self):
-        """Make the instance generate its data items."""
-        for attr_name in self._custom_attributes:
-            yield (attr_name, getattr(self, attr_name))
+#    def __iter__(self):
+#        """Make the instance generate its data items."""
+#        for attr_name in self._custom_attributes:
+#            yield (attr_name, getattr(self, attr_name))
     def __str__(self):
         final_line_list = ["tree node:",
                            "parent:   {}".format("yes" if self.parent else "none"),
@@ -48,7 +48,7 @@ class TreeNode(object):
     @property
     def children(self):
         """Generate children. Don't provide direct list access."""
-        for child in self._children.values(): yield child
+        return self._children.values()
 
     @property
     def in_order_nodes(self):
