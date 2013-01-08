@@ -41,9 +41,6 @@ class Access_To_Children(ut.TestCase):
         self.assertRaises(AttributeError, setattr, self.parent, "children", 1)
         self.assertRaises(AttributeError, delattr, self.parent, "children")
 
-    def test_TN_children_property_does_not_allow_append_etc_access_to_children(self):
-        self.assertRaises(AttributeError, getattr, self.parent.children, "append")
-
     def setUp(self):
         self.parent = st.TreeNode(a="parent")
         self.child1 = st.TreeNode(a="child1")

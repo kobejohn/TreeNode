@@ -19,9 +19,9 @@ class TN_access_to_data(ut.TestCase):
         self.assertEqual(self.node.b, 2)
         self.assertEqual(self.node.c, 3)
 
-    def test_TN_provides_sequence_of_name_value_tuple_access_to_attributes(self):
-        names_values = list(self.node)
-        self.assertItemsEqual(names_values, [("a",1),("b",2),("c",3)])
+#    def test_TN_provides_sequence_of_name_value_tuple_access_to_attributes(self):
+#        names_values = list(self.node)
+#        self.assertItemsEqual(names_values, [("a",1),("b",2),("c",3)])
 
     def setUp(self):
         self.node = st.TreeNode(a=1, b=2, c=3)
