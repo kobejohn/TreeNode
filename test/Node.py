@@ -55,7 +55,7 @@ class Nodes_Are_Human_Readable(ut.TestCase):
         parent.graft_child(main)
         main.graft_child(TreeNode())
         main.graft_child(TreeNode())
-        string_spec = 'tree node:\n'\
+        string_spec = 'TreeNode:\n'\
                       '    parent:   yes\n'\
                       '    children: 2\n'\
                       '    a: 1\n'\

@@ -1,5 +1,6 @@
 from collections import deque
 
+
 class TreeNode(object):
     def __init__(self, **attributes):
         """Create a treenode with specified attributes.
@@ -46,13 +47,19 @@ class TreeNode(object):
     def __eq__(self, other):
         return not (self != other)
 
-    def __str__(self):
-        line_list = ['tree node:',
+    def __unicode__(self):
+        line_list = ['TreeNode:',
                      '    parent:   {}'.format('none' if self.parent is None else 'yes'),
                      '    children: {}'.format(len(list(self.children)))]
         for attr_name in self._data_attributes:
             line_list.append('    {}: {}'.format(attr_name, getattr(self,attr_name)))
         return '\n'.join(line_list)
+
+    def __str__(self):
+        return unicode(self).encode('utf-8')
+
+    def __repr__(self):
+        return unicode(self)
 
     def trim(self):
         """Remove double link between self and parent.
