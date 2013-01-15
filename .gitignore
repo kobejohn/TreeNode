@@ -1,9 +1,7 @@
-.idea
-tmp.bmp
-thumbs.db
+*.py[cod]
 
-
-*.py[co]
+# C extensions
+*.so
 
 # Packages
 *.egg
@@ -17,6 +15,8 @@ var
 sdist
 develop-eggs
 .installed.cfg
+lib
+lib64
 
 # Installer logs
 pip-log.txt
@@ -24,9 +24,13 @@ pip-log.txt
 # Unit test / coverage reports
 .coverage
 .tox
+nosetests.xml
 
-#Translations
+# Translations
 *.mo
 
-#Mr Developer
+# Mr Developer
 .mr.developer.cfg
+.project
+.pydevproject
+.idea
