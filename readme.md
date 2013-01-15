@@ -5,9 +5,10 @@ Store data in an easy to use, single class NodeTree structure.
 
 It supports various tree operations such as:
 
-- separating and combining trees
-- degenerating a branch (pruning all branches between a and b)
+- separating and combining trees (automatically avoids creating cycles)
 - traversing the nodes in-order or post-order
+- access up or down through doubly-linked parent/child
+
 
 I have used it in several projects where I needed storage of iterative simulation data.
 
