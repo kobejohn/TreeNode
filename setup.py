@@ -1,8 +1,8 @@
 from distutils.core import setup
 
 setup(
-    version='0.1.3',
     name = 'simpletree',
+    version = '0.1.4',
     py_modules = ['simpletree'],
     url = 'http://github.com/kobejohn/simpletree',
     license = 'MIT',
