@@ -1,1 +1,1 @@
-python -m unittest discover -s features -p *.py
+python -m unittest discover -s test -p *.py
