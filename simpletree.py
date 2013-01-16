@@ -49,7 +49,7 @@ class TreeNode(object):
 
     def __unicode__(self):
         line_list = ['TreeNode:',
-                     '    parent:   {}'.format('none' if self.parent is None else 'yes'),
+                     '    parent: {}'.format('none' if self.parent is None else 'yes'),
                      '    children: {}'.format(len(list(self.children)))]
         for attr_name in self._data_attributes:
             line_list.append('    {}: {}'.format(attr_name, getattr(self,attr_name)))
