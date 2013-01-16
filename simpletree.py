@@ -1,19 +1,31 @@
+# -*- coding: utf-8 -*-
+"""
+simpletree
+~~~~~~~~~~
+
+Doubly-linked tree structure with arbitrary data attributes.
+
+:copyright: (c) 2012 by John Nieri.
+:license: MIT, see LICENSE for more details.
+"""
 from collections import deque
 
 
 class TreeNode(object):
+    """Single object that provides both node and tree behavior.
+
+    Note on equality:
+    Equality is based on the values for all data attributes.
+
+    Note on subclassing:
+    The intention is to subclass TreeNode and override __init__ to provide
+    a standard set of attributes for a particular application.
+    """
     def __init__(self, **attributes):
         """Create a treenode with specified attributes.
 
         Arguments:
         keys: use valid python names as they will be used to create attributes
-
-        Note on equality:
-        Equality is based on the values for all data attributes.
-
-        Note on subclassing:
-        The intention is to subclass TreeNode and override __init__ to provide
-        a standard set of attributes for a particular application.
 
         """
         self._parent = None
