@@ -1,9 +1,9 @@
 from distutils.core import setup
 
 setup(
-    name = 'simpletree',
+    name = 'treenode',
     version = '0.1.5',
-    py_modules = ['simpletree'],
+    py_modules = ['treenode'],
     url = 'http://github.com/kobejohn/simpletree',
     license = 'MIT',
     author = 'KobeJohn',

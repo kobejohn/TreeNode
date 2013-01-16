@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """
-simpletree
+treenode
 ~~~~~~~~~~
 
 Doubly-linked tree structure with arbitrary data attributes.

@@ -1,6 +1,6 @@
 Quick Usage
 ===========
-    >>> from simpletree import TreeNode
+    >>> from treenode import TreeNode
     >>> root = TreeNode(attr_1 = 1, attr_2 = 2)
     >>> root
     TreeNode:

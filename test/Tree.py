@@ -1,6 +1,6 @@
 import unittest as ut
 
-from simpletree import TreeNode
+from treenode import TreeNode
 
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
 #
