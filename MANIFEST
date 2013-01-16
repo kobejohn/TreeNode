@@ -3,6 +3,6 @@ LICENSE
 readme.md
 run_tests.py
 setup.py
-simpletree.py
+treenode.py
 test\Node.py
 test\Tree.py
