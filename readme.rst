@@ -1,5 +1,7 @@
 Quick Usage
 ===========
+::
+
     >>> from treenode import TreeNode
     >>> root = TreeNode(attr_1 = 1, attr_2 = 2)
     >>> root
@@ -25,7 +27,6 @@ Quick Usage
         attr_4: 4
 
 
-
 Introduction
 ============
 
@@ -43,7 +44,6 @@ simulation data.
 
 It is currently being reimplemented from old code so there is a lot of
 missing functionality.
-
 
 
 Copyright
