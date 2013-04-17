@@ -2,8 +2,8 @@ from distutils.core import setup
 
 setup(
     name = 'treenode',
-    version = '0.1.5',
-    url = 'http://github.com/kobejohn/simpletree',
+    version = '0.1.5.1',
+    url = 'http://github.com/kobejohn/treenode',
     py_modules = ['treenode'],
     author_email = 'niericentral@gmail.com',
     description = 'Class with unified tree and node behavior. Each node has custom data as attributes.',
